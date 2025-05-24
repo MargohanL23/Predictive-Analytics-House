@@ -20,15 +20,15 @@ Proses klarifikasi masalah dalam proyek prediksi harga rumah ini melibatkan iden
 
 ### Problem Statements
 
-1.  **Ketidakpastian dalam Penentuan Harga Jual/Beli:** Calon pembeli dan penjual sering menghadapi kesulitan dalam menentukan harga properti yang wajar dan kompetitif di pasar, menyebabkan proses tawar-menawar yang panjang atau estimasi yang tidak akurat.
-2.  **Keterbatasan Penilaian Properti Tradisional:** Penilaian properti secara manual oleh profesional bisa memakan waktu dan biaya, serta berpotensi adanya bias subjektif, terutama di pasar yang bergerak cepat.
-3.  **Kurangnya Alat Bantu Prediktif yang Efisien:** Individu atau entitas yang ingin memprediksi nilai properti di masa depan atau mengidentifikasi properti dengan potensi apresiasi nilai sering kali kekurangan alat yang efisien dan berbasis data untuk melakukannya.
+1.  **Ketidakpastian dalam Penentuan Harga Jual/Beli:** Calon pembeli dan penjual sering menghadapi kesulitan dalam menentukan harga properti yang wajar dan kompetitif di pasar, menyebabkan proses tawar-menawar yang panjang atau estimasi yang tidak akurat.
+2.  **Keterbatasan Penilaian Properti Tradisional:** Penilaian properti secara manual oleh profesional bisa memakan waktu dan biaya, serta berpotensi adanya bias subjektif, terutama di pasar yang bergerak cepat.
+3.  **Kurangnya Alat Bantu Prediktif yang Efisien:** Individu atau entitas yang ingin memprediksi nilai properti di masa depan atau mengidentifikasi properti dengan potensi apresiasi nilai sering kali kekurangan alat yang efisien dan berbasis data untuk melakukannya.
 
 ### Goals
 
-1.  Membangun model regresi yang mampu **memprediksi nilai median rumah** berdasarkan fitur-fitur properti yang tersedia dalam dataset.
-2.  Menyediakan estimasi nilai properti yang **lebih cepat dan objektif**, mengurangi ketergantungan pada penilaian manual yang memakan waktu dan biaya.
-3.  Mengidentifikasi **faktor-faktor kunci** yang paling berpengaruh terhadap nilai rumah, memberikan wawasan berharga bagi pembeli, penjual, dan pengembang properti.
+1.  Membangun model regresi yang mampu **memprediksi nilai median rumah** berdasarkan fitur-fitur properti yang tersedia dalam dataset.
+2.  Menyediakan estimasi nilai properti yang **lebih cepat dan objektif**, mengurangi ketergantungan pada penilaian manual yang memakan waktu dan biaya.
+3.  Mengidentifikasi **faktor-faktor kunci** yang paling berpengaruh terhadap nilai rumah, memberikan wawasan berharga bagi pembeli, penjual, dan pengembang properti.
 
 ### Solution Approach
 
@@ -36,8 +36,8 @@ Untuk mencapai tujuan di atas, kami akan menggunakan pendekatan machine learning
 
 #### Solution Statements
 
-1.  **Pendekatan Algoritma Regresi Linier (Linear Regression):** Model ini akan digunakan sebagai *baseline* karena kesederhanaan dan interpretasinya yang mudah. Model ini akan memodelkan hubungan linier antara fitur-fitur input dan nilai median rumah.
-2.  **Pendekatan Algoritma Ensemble (Random Forest Regressor / Gradient Boosting Regressor):** Untuk potensi akurasi yang lebih tinggi dan kemampuan menangani hubungan non-linier serta interaksi fitur, model *ensemble* seperti Random Forest Regressor atau Gradient Boosting Regressor akan dipertimbangkan. Algoritma ini menggabungkan prediksi dari beberapa *decision tree* untuk menghasilkan prediksi yang lebih robust.
+1.  **Pendekatan Algoritma Regresi Linier (Linear Regression):** Model ini akan digunakan sebagai *baseline* karena kesederhanaan dan interpretasinya yang mudah. Model ini akan memodelkan hubungan linier antara fitur-fitur input dan nilai median rumah.
+2.  **Pendekatan Algoritma Ensemble (Random Forest Regressor / Gradient Boosting Regressor):** Untuk potensi akurasi yang lebih tinggi dan kemampuan menangani hubungan non-linier serta interaksi fitur, model *ensemble* seperti Random Forest Regressor atau Gradient Boosting Regressor akan dipertimbangkan. Algoritma ini menggabungkan prediksi dari beberapa *decision tree* untuk menghasilkan prediksi yang lebih robust.
 
 ---
 
@@ -52,18 +52,18 @@ Dataset ini memiliki 20.640 baris (sampel) dan 10 kolom (fitur). Sembilan dari s
 
 **Detail Kolom:**
 
-| # | Column              | Non-Null Count | Dtype   | Deskripsi                                                                |
+| # | Column              | Non-Null Count | Dtype   | Deskripsi                                                                |
 | :- | :------------------ | :------------- | :------ | :----------------------------------------------------------------------- |
-| 0 | `longitude`         | 20640          | `float64` | Posisi geografis bujur untuk blok perumahan.                             |
-| 1 | `latitude`          | 20640          | `float64` | Posisi geografis lintang untuk blok perumahan.                           |
-| 2 | `housing_median_age`| 20640          | `float64` | Usia median rumah dalam blok perumahan tersebut.                        |
-| 3 | `total_rooms`       | 20640          | `float64` | Jumlah total ruangan di semua rumah dalam blok perumahan.                |
-| 4 | `total_bedrooms`    | 20433          | `float64` | Jumlah total kamar tidur di semua rumah dalam blok perumahan.            |
-| 5 | `population`        | 20640          | `float64` | Jumlah populasi di blok perumahan.                                       |
-| 6 | `households`        | 20640          | `float64` | Jumlah total rumah tangga, yaitu jumlah rumah dalam blok perumahan.      |
-| 7 | `median_income`     | 20640          | `float64` | Pendapatan median untuk rumah tangga dalam blok perumahan (dalam puluhan ribu USD). |
-| 8 | `median_house_value`| 20640          | `float64` | Nilai median rumah untuk rumah tangga dalam blok perumahan (variabel target). |
-| 9 | `ocean_proximity`   | 20640          | `object`  | Lokasi relatif blok perumahan terhadap samudra/laut.                     |
+| 0 | `longitude`         | 20640          | `float64` | Posisi geografis bujur untuk blok perumahan.                             |
+| 1 | `latitude`          | 20640          | `float64` | Posisi geografis lintang untuk blok perumahan.                           |
+| 2 | `housing_median_age`| 20640          | `float64` | Usia median rumah dalam blok perumahan tersebut.                        |
+| 3 | `total_rooms`       | 20640          | `float64` | Jumlah total ruangan di semua rumah dalam blok perumahan.                |
+| 4 | `total_bedrooms`    | 20433          | `float64` | Jumlah total kamar tidur di semua rumah dalam blok perumahan.            |
+| 5 | `population`        | 20640          | `float64` | Jumlah populasi di blok perumahan.                                       |
+| 6 | `households`        | 20640          | `float64` | Jumlah total rumah tangga, yaitu jumlah rumah dalam blok perumahan.      |
+| 7 | `median_income`     | 20640          | `float64` | Pendapatan median untuk rumah tangga dalam blok perumahan (dalam puluhan ribu USD). |
+| 8 | `median_house_value`| 20640          | `float64` | Nilai median rumah untuk rumah tangga dalam blok perumahan (variabel target). |
+| 9 | `ocean_proximity`   | 20640          | `object`  | Lokasi relatif blok perumahan terhadap samudra/laut.                     |
 
 **Missing Values:**
 Hanya kolom `total_bedrooms` yang memiliki nilai hilang sebanyak 207 dari 20640 sampel (sekitar 1.00%).
@@ -110,13 +110,17 @@ Tahap persiapan data sangat krusial untuk memastikan kualitas data yang masuk ke
     * **Proses:** Berdasarkan analisis EDA, beberapa fitur numerik (`total_rooms`, `total_bedrooms`, `population`, `households`, `median_income`) dan variabel target `median_house_value` menunjukkan distribusi yang **skewed** dan keberadaan *outlier* yang signifikan. Kami akan menerapkan **transformasi logaritmik** (`np.log1p`) pada kolom-kolom ini untuk mengurangi *skewness* dan dampak *outlier*.
     * **Alasan:** Transformasi logaritmik membantu menormalkan distribusi data yang *skewed* dan memadatkan rentang nilai ekstrem, membuat data lebih sesuai untuk model regresi linier yang sensitif terhadap asumsi normalitas dan homoskedastisitas. Selain itu, transformasi ini membantu model *ensemble* seperti Random Forest belajar dari pola data yang lebih konsisten tanpa menghilangkan informasi berharga yang terkandung dalam nilai-nilai ekstrem. Untuk variabel target, hasil prediksi logaritmik akan di-*inverse transform* menggunakan `np.expm1` untuk mendapatkan nilai dalam skala asli.
 
-3.  **Encoding Fitur Kategorikal:**
-    * **Proses:** Fitur kategorikal `ocean_proximity` perlu diubah menjadi representasi numerik. Karena fitur ini tidak memiliki urutan intrinsik dan memiliki beberapa kategori unik, **One-Hot Encoding** akan digunakan untuk membuat kolom biner baru (0 atau 1) untuk setiap kategori unik.
-    * **Alasan:** Sebagian besar algoritma machine learning hanya dapat bekerja dengan data numerik. One-Hot Encoding memungkinkan fitur kategorikal untuk diintegrasikan ke dalam proses pemodelan tanpa mengasumsikan hubungan ordinal yang salah.
+3.  **Pemisahan Data Training dan Testing (Train-Test Split):**
+    * **Proses:** Setelah penanganan *missing values* dan transformasi logaritmik pada fitur-fitur dan variabel target, data kemudian **dipisahkan menjadi training set dan test set** menggunakan fungsi `train_test_split` dari scikit-learn. Pemisahan ini dilakukan dengan rasio 80% untuk data training dan 20% untuk data testing, serta `random_state` tertentu untuk memastikan konsistensi dan reproduktibilitas hasil.
+    * **Alasan:** Pemisahan data ini merupakan langkah krusial untuk mencegah *data leakage* (kebocoran data). Dengan melakukan split sebelum proses encoding dan scaling, kami memastikan bahwa statistik yang dipelajari (misalnya, mean dan standar deviasi untuk scaling, atau kategori unik untuk encoding) hanya berasal dari data training. Ini memungkinkan model untuk dievaluasi secara adil pada data yang belum pernah dilihat sebelumnya (test set), memberikan estimasi yang lebih akurat tentang kinerja model di dunia nyata dan mencegah *overfitting*.
 
-4.  **Feature Scaling:**
-    * **Proses:** Fitur-fitur numerik yang memiliki skala berbeda (termasuk `longitude`, `latitude`, `housing_median_age`, dan fitur-fitur yang telah ditransformasi logaritmik) akan disesuaikan skalanya menggunakan metode seperti **StandardScaler**.
-    * **Alasan:** Banyak algoritma machine learning, terutama yang berbasis jarak (misalnya k-Nearest Neighbors) atau optimasi gradien (misalnya Regresi Linier dan algoritma berbasis *neural network*), sangat sensitif terhadap skala fitur. *Scaling* membantu mencegah fitur dengan skala besar mendominasi proses pelatihan dan mempercepat konvergensi model.
+4.  **Encoding Fitur Kategorikal:**
+    * **Proses:** Fitur kategorikal `ocean_proximity` perlu diubah menjadi representasi numerik. Karena fitur ini tidak memiliki urutan intrinsik dan memiliki beberapa kategori unik, **One-Hot Encoding** akan digunakan untuk membuat kolom biner baru (0 atau 1) untuk setiap kategori unik. Proses encoding ini akan diterapkan secara terpisah pada data training dan testing setelah proses split.
+    * **Alasan:** Sebagian besar algoritma machine learning hanya dapat bekerja dengan data numerik. One-Hot Encoding memungkinkan fitur kategorikal untuk diintegrasikan ke dalam proses pemodelan tanpa mengasumsikan hubungan ordinal yang salah. Dengan melakukan encoding setelah split, kami memastikan bahwa encoder hanya mempelajari kategori dari training data dan dapat menangani kategori baru di test data dengan strategi `handle_unknown='ignore'`.
+
+5.  **Feature Scaling:**
+    * **Proses:** Fitur-fitur numerik yang memiliki skala berbeda (termasuk `longitude`, `latitude`, `housing_median_age`, dan fitur-fitur yang telah ditransformasi logaritmik) akan disesuaikan skalanya menggunakan metode **StandardScaler**. Proses scaling ini akan dilakukan secara terpisah pada data training dan testing.
+    * **Alasan:** Banyak algoritma machine learning, terutama yang berbasis jarak (misalnya k-Nearest Neighbors) atau optimasi gradien (misalnya Regresi Linier dan algoritma berbasis *neural network*), sangat sensitif terhadap skala fitur. *Scaling* membantu mencegah fitur dengan skala besar mendominasi proses pelatihan dan mempercepat konvergensi model. Dengan melakukan scaling setelah split dan hanya "fit" pada data training, kami mencegah *data leakage* informasi dari test set ke proses scaling.
 
 ---
 
@@ -167,10 +171,10 @@ Pada tahap ini, kami mengevaluasi kinerja kedua model regresi yang telah dilatih
 
 Setelah melatih dan mengevaluasi kedua model pada *test set*, berikut adalah hasilnya:
 
-| Model                 | MSE          | RMSE       | R-squared ($R^2$) |
+| Model                 | MSE          | RMSE       | R-squared ($R^2$) |
 | :-------------------- | :----------- | :--------- | :---------------- |
-| Linear Regression     | 5285759704.38 | 72703.23  | 0.60             |
-| Random Forest Regressor | 2453584613.69 | 49533.67  | 0.81             |
+| Linear Regression     | 5285759704.38 | 72703.23  | 0.60             |
+| Random Forest Regressor | 2453584613.69 | 49533.67  | 0.81             |
 
 **Analisis Hasil:**
 
